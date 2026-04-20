@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>ThinkBlocks</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mobland - Mobile App Landing Page Template">
+    <meta name="keywords" content="HTML5, bootstrap, mobile, app, landing, ios, android, responsive">
+
+    <!-- Font -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Main css -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
+
+    <div class="nav-menu fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark navbar-expand-lg">
+                    
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/website/logo.png" alt="logo">
+                    </a> 
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html#home">HOME</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#features">HIGHLIGHTS</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">TUTORIAL</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#inthebox">IN THE BOX</a>
+                            </li>
+
+                            <li class="nav-item">
+                            <a class="nav-link" href="index.html#gallery">GAME IN ACTION</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="index.html#pricing" class="btn btn-outline-light ml-lg-3 my-2 my-lg-0" style="text-transform: none;">
+    Buy Now
+</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="index.html#download_app" class="btn btn-outline-light ml-lg-2 my-2 my-lg-0" style="text-transform: none;">
+                                    Download App
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="bg-gradient text-center" id="home" style="min-height: 100vh; display: flex; align-items: center;">
+<div class="container">
+
+            <h1>How to Play?</h1>
+
+        <p class="tagline">
+            Watch how ThinkBlocks works across cards, puzzles, shapes, and the board game.
+            For detailed instructions, answers, and discussions, join our community.
+        </p>
+<br><br>
+        <div class="d-flex flex-wrap justify-content-center">
+
+            <a href="#"
+            data-link="playlist"
+               target="_blank"
+               class="btn btn-primary mr-2 mb-2"
+               style="text-transform: none;">
+               Watch Gameplay
+            </a>
+
+            <a href="#"
+            data-link="community"
+               class="btn btn-primary mr-2 mb-2"
+               style="text-transform: none;">
+               Join Community
+            </a>
+
+        </div>
+
+        <p class="mt-3 light-font">
+            *Full manual and advanced guides are shared inside the community.
+        </p>
+
+    </div>
+</header>
+
+
+
+
+<footer class="text-center">
+     <div class="py-5 light-bg" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left">
+                
+                <p class="mb-2"> 
+                    <span class="ti-location-pin mr-2"></span> 
+                    Barnala, Punjab, India
+                </p>
+
+                <div class="d-block d-sm-inline-block">
+                    <p class="mb-2">
+                        <span class="ti-headphone-alt mr-2"></span> 
+                        <a href="#" data-link="whatsapp_order">
+                            Order / Enquire on WhatsApp
+                        </a>
+                    </p>
+                </div>
+
+                <div class="d-block d-sm-inline-block">
+                    <p class="mb-2">
+                        <span class="ti-link mr-2"></span> 
+                        <a href="#" data-link="msme" target="_blank">
+                            View MSME Certification
+                        </a>
+                    </p>
+                </div>
+
+                <p class="mb-0">
+                    © Gaurish Garg <br>
+                    Manufactured by Thinkified Games c/o Gaurish Garg
+                </p>
+
+            </div>
+
+            <div class="col-lg-6">
+                <div>
+                    <a href="privacy.html">
+                        <span >Privacy Policy</span>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+    <!-- jQuery and Bootstrap -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <script src="links.js"></script>
+    <script>
+
+
+var elements = document.querySelectorAll('[data-link]');
+
+for (var i = 0; i < elements.length; i++) {
+    var el = elements[i];
+    var key = el.getAttribute('data-link');
+
+    if (LINKS[key]) {
+        el.href = LINKS[key];
+    }
+}
+
+    </script>
+
+</body>
+
+</html>

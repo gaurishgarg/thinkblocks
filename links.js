@@ -10,3 +10,6 @@
     msme: "msme.pdf",
     playlist: "https://www.youtube.com/playlist?list=PLutC9bNfL52E_hdFEoTooKw-lHhTpib6p"
 };
+const RATE = 899;
+const OFFER = 649;
+const final = OFFER ?? RATE;

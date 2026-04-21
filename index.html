@@ -355,7 +355,7 @@
             <div class="card pricing popular">
                 <div class="card-head">
                     <small class="text-primary">THINKBLOCKS BOX</small>
-                    <span class="price">₹599 <sub><del>₹899</del></sub></span>
+                    <span class="price" data-price></span>
                 </div>
                 <ul class="list-group list-group-flush">
                     <div class="list-group-item">14 interactive card sets</div>
@@ -365,7 +365,8 @@
                     <div class="list-group-item">App-enabled interactive experience</div>
                 </ul>
                 <div class="card-body">
-                    <a href="#" data-link="odoo_store" class="btn btn-primary btn-lg btn-block">Buy From Us (₹599)</a>
+                    <a href="#" data-link="odoo_store" class="btn btn-primary btn-lg btn-block">  Buy From Us (<span id="price" data-final-price></span>)
+</a>
                 </div>
             </div>
 
@@ -373,13 +374,13 @@
             <div class="card pricing">
                 <div class="card-head">
                     <small class="text-primary">AVAILABLE AT STORES</small>
-                    <span class="price">₹899</span>
+                    <span class="price" data-store-price></span>
                 </div>
                 <ul class="list-group list-group-flush">
                 <div class="list-group-item">Available at select toy & book stores</div>
-        <div class="list-group-item">MRP pricing may be applicable in stores</div>
+        <div class="list-group-item">MRP pricing may be applicable in stores.</div>
         <div class="list-group-item">App accesss available</div>
-        <div class="list-group-item">Instant purchase from nearby shops</div>
+        <div class="list-group-item">Check Store for Discounts</div>
         <div class="list-group-item">Ask store staff for ThinkBlocks</div>    
                 </ul>
                 <div class="card-body">
@@ -555,6 +556,73 @@ for (var i = 0; i < elements.length; i++) {
         el.href = LINKS[key];
     }
 }
+
+function updatePrices() {
+
+  var elements = document.querySelectorAll('[data-price]');
+  for (var i = 0; i < elements.length; i++) {
+    var el = elements[i];
+
+    if (!el.getAttribute('data-base-text')) {
+      el.setAttribute('data-base-text', el.textContent);
+    }
+
+    var baseText = el.getAttribute('data-base-text');
+    var hasOffer = (OFFER && OFFER < RATE);
+
+    if (el.tagName === 'A' || el.tagName === 'BUTTON') {
+      if (hasOffer) {
+        el.innerHTML = baseText + ' (<s>₹' + RATE + '</s> ₹' + final + ')';
+      } else {
+        el.textContent = baseText + ' (₹' + RATE + ')';
+      }
+    } else {
+      if (hasOffer) {
+        el.innerHTML = '<s>₹' + RATE + '</s> ₹' + final;
+      } else {
+        el.textContent = '₹' + RATE;
+      }
+    }
+  }
+
+  // -------- STORE PRICE --------
+  var storeEls = document.querySelectorAll('[data-store-price]');
+  for (var j = 0; j < storeEls.length; j++) {
+    var el2 = storeEls[j];
+
+    if (!el2.getAttribute('data-base-text')) {
+      el2.setAttribute('data-base-text', el2.textContent);
+    }
+
+    var baseText2 = el2.getAttribute('data-base-text');
+
+    if (el2.tagName === 'A' || el2.tagName === 'BUTTON') {
+      el2.innerHTML = baseText2 + ' (₹' + STORE_RATE + ')';
+    } else {
+      el2.innerHTML = '₹' + RATE;
+    }
+  }
+
+  var finalEls = document.querySelectorAll('[data-final-price]');
+for (var k = 0; k < finalEls.length; k++) {
+  var el3 = finalEls[k];
+
+  if (!el3.getAttribute('data-base-text')) {
+    el3.setAttribute('data-base-text', el3.textContent);
+  }
+
+  var baseText3 = el3.getAttribute('data-base-text');
+
+  if (el3.tagName === 'A' || el3.tagName === 'BUTTON') {
+    el3.innerHTML = baseText3 + ' (₹' + final + ')';
+  } else {
+    el3.textContent = '₹' + final;
+  }
+}
+}
+
+ 
+document.addEventListener('DOMContentLoaded', updatePrices);
 
     </script>
 
